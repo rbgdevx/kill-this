@@ -1,0 +1,22 @@
+## Interface: 110007
+## Title: KILL THIS
+## Version: 1.0.0
+## Author: RBGDEV
+## Notes: Shows a banner above nameplates you should kill
+## OptionalDeps: Ace3, LibStub, LibSharedMedia-3.0, AceGUI-3.0-SharedMediaWidgets
+## SavedVariables: KillThisDB
+## X-Category: Battlegrounds/PvP
+## X-License: All Rights Reserved
+## X-Website:
+## X-Curse-Project-ID:
+## X-Wago-ID:
+## X-WoWI-ID:
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+config.lua
+options.lua
+helpers.lua
+KillThis.lua
