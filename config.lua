@@ -387,6 +387,7 @@ end
 -- ShowClassColorInNameplate - 1 - Toggles class colors in the background of Nameplate health bar for enemy players.
 -- showVKeyCastbarOnlyOnTarget - Only show the enemy cast bar on your current target.
 -- showVKeyCastbarSpellName - 1 - Show the name of the spell on the cast bar on nameplates.
+-- NamePlateHorizontalScale == "1.4" - this means larger nameplates is on
 -- /run SetCVar("nameplateShowPersonalCooldowns", 1)
 -- /run SetCVar("autoSelfCast", GetCVarDefault("autoSelfCast"))
 -- /run print(GetCVar("nameplatePersonalShowWithTarget"))
