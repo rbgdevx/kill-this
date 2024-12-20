@@ -541,12 +541,12 @@ NS.MakeNPCOption = function(npcId, npcInfo, index)
         width = "full",
         order = 3,
         get = function(info)
-          return NS.db[info[1]][info[2]] and NS.db[info[1]][info[2]][info[3]] or npcEnabled
+          return NS.db[info[1]][info[2]][info[3]]
         end,
         set = function(info, value)
-          if value then
-            NS.db[info[1]][info[2]][info[3]] = value
+          NS.db[info[1]][info[2]][info[3]] = value
 
+          if value then
             if value then
               color = "|cFF00FF00" --green
             else
@@ -555,8 +555,6 @@ NS.MakeNPCOption = function(npcId, npcInfo, index)
 
             NS.AceConfig.args.npcs.args[NPC_ID].name = color .. npcName
           else
-            NS.db[info[1]][info[2]][info[3]] = false
-
             NS.AceConfig.args.npcs.args[NPC_ID].name = "|cFFFF0000" .. npcName
           end
 
