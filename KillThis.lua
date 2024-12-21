@@ -152,16 +152,22 @@ local function addBanner(nameplate, guid)
 
   local isPlayer = UnitIsPlayer(unit)
   local isSelf = UnitIsUnit(unit, "player")
+  local isFriend = UnitIsFriend("player", unit)
+  local isEnemy = UnitIsEnemy("player", unit)
+  -- local canAttack = UnitCanAttack("player", unit)
   local isDeadOrGhost = UnitIsDeadOrGhost(unit)
 
   local npcID = select(6, split("-", guid))
   local hideDead = isDeadOrGhost
   local hideSelf = isSelf
   local hidePlayers = isPlayer
+  local hideFriendly = NS.db.general.showFriendly == false and isFriend
+  local hideEnemy = NS.db.general.showEnemy == false and isEnemy
   local hideNotInList = NS.isNPCInList(NS.NPC_SHOW_LIST, npcID) ~= true
   local hideTestMode = not NS.db.general.test
   local hideNotEnabled = not NS.db.npcs[npcID] or NS.db.npcs[npcID].enabled ~= true
-  local hideBanner = hideTestMode and (hideDead or hideSelf or hidePlayers or hideNotInList or hideNotEnabled)
+  local hideBanner = hideTestMode
+    and (hideDead or hideSelf or hidePlayers or hideFriendly or hideEnemy or hideNotInList or hideNotEnabled)
 
   if hideBanner then
     if nameplate.killThisBanner then

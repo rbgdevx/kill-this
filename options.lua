@@ -63,12 +63,44 @@ local AceConfig = {
             return NS.db.general.ignoreNameplateScale
           end,
         },
+        showFriendly = {
+          name = "Show Banner on Friendly Units",
+          type = "toggle",
+          width = 1.3,
+          order = 4,
+          set = function(_, val)
+            NS.db.general.showFriendly = val
+            NS.OnDbChanged()
+          end,
+          get = function(_)
+            return NS.db.general.showFriendly
+          end,
+        },
+        showEnemy = {
+          name = "Show Banner on Enemy Units",
+          type = "toggle",
+          width = 1.3,
+          order = 5,
+          set = function(_, val)
+            NS.db.general.showEnemy = val
+            NS.OnDbChanged()
+          end,
+          get = function(_)
+            return NS.db.general.showEnemy
+          end,
+        },
+        spacer1 = {
+          name = "",
+          type = "description",
+          order = 6,
+          width = "full",
+        },
         offsetX = {
           name = "Offset X",
           desc = "Offset left/right from the anchor point",
           type = "range",
           width = 1.25,
-          order = 4,
+          order = 7,
           isPercent = false,
           min = -250,
           max = 250,
@@ -87,7 +119,7 @@ local AceConfig = {
           desc = "Offset top/bottom from the anchor point",
           type = "range",
           width = 1.25,
-          order = 5,
+          order = 8,
           isPercent = false,
           min = -250,
           max = 250,
@@ -101,17 +133,17 @@ local AceConfig = {
             return NS.db.general.offsetY
           end,
         },
-        spacer1 = {
+        spacer2 = {
           name = "",
           type = "description",
-          order = 6,
+          order = 9,
           width = "full",
         },
         fontSize = {
           type = "range",
           name = "Font Size",
           width = 2.0,
-          order = 7,
+          order = 10,
           min = 2,
           max = 64,
           step = 1,
@@ -123,17 +155,17 @@ local AceConfig = {
             return NS.db.general.fontSize
           end,
         },
-        spacer2 = {
+        spacer3 = {
           name = "",
           type = "description",
-          order = 8,
+          order = 11,
           width = "full",
         },
         fontFamily = {
           type = "select",
           name = "Font Family",
           width = 2.0,
-          order = 9,
+          order = 12,
           dialogControl = "LSM30_Font",
           values = SharedMedia:HashTable("font"),
           set = function(_, val)
@@ -144,17 +176,17 @@ local AceConfig = {
             return NS.db.general.fontFamily
           end,
         },
-        spacer3 = {
+        spacer4 = {
           name = "",
           type = "description",
-          order = 10,
+          order = 13,
           width = "full",
         },
         fontColor = {
           type = "color",
           name = "Font Color",
           width = 0.75,
-          order = 11,
+          order = 14,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.fontColor.r = val1
@@ -174,7 +206,7 @@ local AceConfig = {
           type = "color",
           name = "Background Color",
           width = 1.0,
-          order = 12,
+          order = 15,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.backgroundColor.r = val1
@@ -194,7 +226,7 @@ local AceConfig = {
           type = "color",
           name = "Border Color",
           width = 1.0,
-          order = 13,
+          order = 16,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.borderColor.r = val1
@@ -210,17 +242,17 @@ local AceConfig = {
               NS.db.general.borderColor.a
           end,
         },
-        spacer4 = {
+        spacer5 = {
           name = "",
           type = "description",
-          order = 14,
+          order = 17,
           width = "full",
         },
         labelEnabled = {
           name = "Label:",
           type = "toggle",
           width = 0.4,
-          order = 15,
+          order = 18,
           set = function(_, val)
             NS.db.general.labelEnabled = val
             NS.OnDbChanged()
@@ -234,7 +266,7 @@ local AceConfig = {
           desc = "",
           type = "input",
           width = 0.75,
-          order = 16,
+          order = 19,
           disabled = function()
             return not NS.db.general.labelEnabled
           end,
@@ -246,17 +278,17 @@ local AceConfig = {
             return NS.db.general.label
           end,
         },
-        spacer5 = {
+        spacer6 = {
           name = "",
           type = "description",
-          order = 17,
+          order = 20,
           width = 0.1,
         },
         includeUnitName = {
           name = "Include Units Name (ex. 'Kill Psyfiend')",
           type = "toggle",
           width = 1.75,
-          order = 18,
+          order = 21,
           set = function(_, val)
             NS.db.general.includeUnitName = val
             NS.OnDbChanged()
@@ -265,17 +297,17 @@ local AceConfig = {
             return NS.db.general.includeUnitName
           end,
         },
-        spacer6 = {
+        spacer7 = {
           name = "",
           type = "description",
-          order = 19,
+          order = 22,
           width = "full",
         },
         uppercase = {
           name = "Uppercase",
           type = "toggle",
           width = 0.75,
-          order = 20,
+          order = 23,
           set = function(_, val)
             NS.db.general.uppercase = val
             NS.OnDbChanged()
@@ -288,7 +320,7 @@ local AceConfig = {
           name = "Lowercase",
           type = "toggle",
           width = 0.75,
-          order = 21,
+          order = 24,
           set = function(_, val)
             NS.db.general.lowercase = val
             NS.OnDbChanged()
@@ -301,7 +333,7 @@ local AceConfig = {
           name = "Blizzard CVar Settings",
           type = "group",
           inline = true,
-          order = 22,
+          order = 25,
           args = {
             varDesc = {
               name = "The following settings are required for the addon to work properly.",
