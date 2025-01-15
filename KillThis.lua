@@ -13,14 +13,14 @@ local pairs = pairs
 local LibStub = LibStub
 local next = next
 local select = select
-local SetCVar = SetCVar
-local GetCVar = GetCVar
 
 local split = string.split
 
 local GetNamePlateForUnit = C_NamePlate.GetNamePlateForUnit
 local GetNamePlates = C_NamePlate.GetNamePlates
 local After = C_Timer.After
+local GetCVarInfo = C_CVar.GetCVarInfo
+local SetCVar = C_CVar.SetCVar
 
 local AceConfig = LibStub("AceConfig-3.0")
 local AceConfigDialog = LibStub("AceConfigDialog-3.0")
@@ -231,52 +231,91 @@ end
 
 NS.resetCVars = function()
   -- All Nameplates
-  local nameplateShowAll = GetCVar("nameplateShowAll")
-  NS.db.cvars.showAlways = nameplateShowAll == 1 and true or false
-  SetCVar("nameplateShowAll", nameplateShowAll)
+  do
+    local cvar = "nameplateShowAll"
+    local current, default = GetCVarInfo("nameplateShowAll")
+    if current ~= default then
+      NS.db.cvars.showAlways = default == "1" and true or false
+      SetCVar(cvar, default)
+    end
+  end
 
   -- Friendly Nameplates
-  local nameplateShowFriends = GetCVar("nameplateShowFriends")
-  NS.db.cvars.showFriends = nameplateShowFriends == 1 and true or false
-  SetCVar("nameplateShowFriends", nameplateShowFriends)
+  do
+    local cvar = "nameplateShowFriends"
+    local current, default = GetCVarInfo(cvar)
+    if current ~= default then
+      NS.db.cvars.showFriends = default == "1" and true or false
+      SetCVar(cvar, default)
+    end
+  end
 
-  local nameplateShowFriendlyTotems = GetCVar("nameplateShowFriendlyTotems")
-  NS.db.cvars.showFriendlyTotems = nameplateShowFriendlyTotems == 1 and true or false
-  SetCVar("nameplateShowFriendlyTotems", nameplateShowFriendlyTotems)
+  -- Friendly Totems
+  do
+    local cvar = "nameplateShowFriendlyTotems"
+    local current, default = GetCVarInfo(cvar)
+    if current ~= default then
+      NS.db.cvars.showFriendlyTotems = default == "1" and true or false
+      SetCVar(cvar, default)
+    end
+  end
 
-  local nameplateShowFriendlyGuardians = GetCVar("nameplateShowFriendlyGuardians")
-  NS.db.cvars.showFriendlyGuardians = nameplateShowFriendlyGuardians == 1 and true or false
-  SetCVar("nameplateShowFriendlyGuardians", nameplateShowFriendlyGuardians)
+  -- Friendly Guardians
+  do
+    local cvar = "nameplateShowFriendlyGuardians"
+    local current, default = GetCVarInfo(cvar)
+    if current ~= default then
+      NS.db.cvars.showFriendlyGuardians = default == "1" and true or false
+      SetCVar(cvar, default)
+    end
+  end
 
   -- Enemy Nameplates
-  local nameplateShowEnemies = GetCVar("nameplateShowEnemies")
-  NS.db.cvars.showEnemies = nameplateShowEnemies == 1 and true or false
-  SetCVar("nameplateShowEnemies", nameplateShowEnemies)
+  do
+    local cvar = "nameplateShowEnemies"
+    local current, default = GetCVarInfo(cvar)
+    if current ~= default then
+      NS.db.cvars.showEnemies = default == "1" and true or false
+      SetCVar(cvar, default)
+    end
+  end
 
-  local nameplateShowEnemyTotems = GetCVar("nameplateShowEnemyTotems")
-  NS.db.cvars.showEnemyTotems = nameplateShowEnemyTotems == 1 and true or false
-  SetCVar("nameplateShowEnemyTotems", nameplateShowEnemyTotems)
+  -- Enemy Totems
+  do
+    local cvar = "nameplateShowEnemyTotems"
+    local current, default = GetCVarInfo(cvar)
+    if current ~= default then
+      NS.db.cvars.showEnemyTotems = default == "1" and true or false
+      SetCVar(cvar, default)
+    end
+  end
 
-  local nameplateShowEnemyGuardians = GetCVar("nameplateShowEnemyGuardians")
-  NS.db.cvars.showEnemyGuardians = nameplateShowEnemyGuardians == 1 and true or false
-  SetCVar("nameplateShowEnemyGuardians", nameplateShowEnemyGuardians)
+  -- Enemy Guardians
+  do
+    local cvar = "nameplateShowEnemyGuardians"
+    local current, default = GetCVarInfo(cvar)
+    if current ~= default then
+      NS.db.cvars.showEnemyGuardians = default == "1" and true or false
+      SetCVar(cvar, default)
+    end
+  end
 
   refreshNameplates(true)
 end
 
 local function updateCVars()
   -- All Nameplates
-  SetCVar("nameplateShowAll", NS.db.cvars.showAlways and 1 or 0)
+  SetCVar("nameplateShowAll", NS.db.cvars.showAlways and "1" or "0")
 
   -- Friendly Nameplates
-  SetCVar("nameplateShowFriends", NS.db.cvars.showFriends and 1 or 0)
-  SetCVar("nameplateShowFriendlyTotems", NS.db.cvars.showFriendlyTotems and 1 or 0)
-  SetCVar("nameplateShowFriendlyGuardians", NS.db.cvars.showFriendlyGuardians and 1 or 0)
+  SetCVar("nameplateShowFriends", NS.db.cvars.showFriends and "1" or "0")
+  SetCVar("nameplateShowFriendlyTotems", NS.db.cvars.showFriendlyTotems and "1" or "0")
+  SetCVar("nameplateShowFriendlyGuardians", NS.db.cvars.showFriendlyGuardians and "1" or "0")
 
   -- Enemy Nameplates
-  SetCVar("nameplateShowEnemies", NS.db.cvars.showEnemies and 1 or 0)
-  SetCVar("nameplateShowEnemyTotems", NS.db.cvars.showEnemyTotems and 1 or 0)
-  SetCVar("nameplateShowEnemyGuardians", NS.db.cvars.showEnemyGuardians and 1 or 0)
+  SetCVar("nameplateShowEnemies", NS.db.cvars.showEnemies and "1" or "0")
+  SetCVar("nameplateShowEnemyTotems", NS.db.cvars.showEnemyTotems and "1" or "0")
+  SetCVar("nameplateShowEnemyGuardians", NS.db.cvars.showEnemyGuardians and "1" or "0")
 end
 
 function KillThis:detachFromNameplate(nameplate)

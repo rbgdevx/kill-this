@@ -1,6 +1,6 @@
 ## Interface: 110007
 ## Title: KILL THIS
-## Version: 1.0.3
+## Version: 1.0.4
 ## Author: RBGDEV
 ## Notes: Shows a banner above nameplates you should kill
 ## OptionalDeps: AceConfig-3.0, AceGUI-3.0, AceGUI-3.0-SharedMediaWidgets, CallbackHandler-1.0, LibSharedMedia-3.0, LibStub

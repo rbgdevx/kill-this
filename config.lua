@@ -8,6 +8,7 @@ local tsort = table.sort
 local tinsert = table.insert
 
 local GetSpellTexture = C_Spell.GetSpellTexture
+local GetCVar = C_CVar.GetCVar
 
 NS.CVAR_DATA = {
   ["showAlways"] = {
@@ -318,13 +319,13 @@ local DefaultDatabase = {
     lowercase = false,
   },
   cvars = {
-    showAlways = false,
-    showFriends = false,
-    showFriendlyTotems = false,
-    showFriendlyGuardians = false,
-    showEnemies = false,
-    showEnemyTotems = false,
-    showEnemyGuardians = false,
+    showAlways = GetCVar("nameplateShowAll") == "1" and true or false,
+    showFriends = GetCVar("nameplateShowFriends") == "1" and true or false,
+    showFriendlyTotems = GetCVar("nameplateShowFriendlyTotems") == "1" and true or false,
+    showFriendlyGuardians = GetCVar("nameplateShowFriendlyGuardians") == "1" and true or false,
+    showEnemies = GetCVar("nameplateShowEnemies") == "1" and true or false,
+    showEnemyTotems = GetCVar("nameplateShowEnemyTotems") == "1" and true or false,
+    showEnemyGuardians = GetCVar("nameplateShowEnemyGuardians") == "1" and true or false,
   },
   npcs = {},
 }

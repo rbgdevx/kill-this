@@ -359,10 +359,7 @@ local AceConfig = {
                 NS.OnDbChanged()
               end,
               get = function(_)
-                local cVar = GetCVar("nameplateShowAll") == 1 and true or false
-                local db = NS.db.cvars.showAlways
-                local val = cVar ~= db and cVar or db
-                return val
+                return NS.db.cvars.showAlways
               end,
             },
             showFriends = {
@@ -376,10 +373,7 @@ local AceConfig = {
                 NS.OnDbChanged()
               end,
               get = function(_)
-                local cVar = GetCVar("nameplateShowFriends") == 1 and true or false
-                local db = NS.db.cvars.showFriends
-                local val = cVar ~= db and cVar or db
-                return val
+                return NS.db.cvars.showFriends
               end,
             },
             showFriendlyTotems = {
@@ -396,10 +390,7 @@ local AceConfig = {
                 NS.OnDbChanged()
               end,
               get = function(_)
-                local cVar = GetCVar("nameplateShowFriendlyTotems") == 1 and true or false
-                local db = NS.db.cvars.showFriendlyTotems
-                local val = cVar ~= db and cVar or db
-                return val
+                return NS.db.cvars.showFriendlyTotems
               end,
             },
             showFriendlyGuardians = {
@@ -416,10 +407,7 @@ local AceConfig = {
                 NS.OnDbChanged()
               end,
               get = function(_)
-                local cVar = GetCVar("nameplateShowFriendlyGuardians") == 1 and true or false
-                local db = NS.db.cvars.showFriendlyGuardians
-                local val = cVar ~= db and cVar or db
-                return val
+                return NS.db.cvars.showFriendlyGuardians
               end,
             },
             showEnemies = {
@@ -433,10 +421,7 @@ local AceConfig = {
                 NS.OnDbChanged()
               end,
               get = function(_)
-                local cVar = GetCVar("nameplateShowEnemies") == 1 and true or false
-                local db = NS.db.cvars.showEnemies
-                local val = cVar ~= db and cVar or db
-                return val
+                return NS.db.cvars.showEnemies
               end,
             },
             showEnemyTotems = {
@@ -453,10 +438,7 @@ local AceConfig = {
                 NS.OnDbChanged()
               end,
               get = function(_)
-                local cVar = GetCVar("nameplateShowEnemyTotems") == 1 and true or false
-                local db = NS.db.cvars.showEnemyTotems
-                local val = cVar ~= db and cVar or db
-                return val
+                return NS.db.cvars.showEnemyTotems
               end,
             },
             showEnemyGuardians = {
@@ -473,10 +455,7 @@ local AceConfig = {
                 NS.OnDbChanged()
               end,
               get = function(_)
-                local cVar = GetCVar("nameplateShowEnemyGuardians") == 1 and true or false
-                local db = NS.db.cvars.showEnemyGuardians
-                local val = cVar ~= db and cVar or db
-                return val
+                return NS.db.cvars.showEnemyGuardians
               end,
             },
             resetAllCVars = {
