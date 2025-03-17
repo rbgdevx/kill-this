@@ -4,7 +4,6 @@ local type = type
 local next = next
 local pairs = pairs
 local ipairs = ipairs
-local wipe = wipe
 local getmetatable = getmetatable
 local setmetatable = setmetatable
 
@@ -29,7 +28,7 @@ NS.CopyDefaults = function(src, dst)
 
   for k, v in pairs(src) do
     if type(v) == "table" then
-      if k == "npcs" or k == "cvars" then
+      if k == "cvars" then
         if not dst[k] or next(dst[k]) == nil then
           dst[k] = NS.CopyDefaults(v, dst[k])
         end
@@ -77,7 +76,7 @@ NS.CleanupDB = function(src, dst)
         src[key] = nil
       end
     elseif type(value) == "table" then
-      if key ~= "npcs" and key ~= "cvars" then -- also set on demand
+      if key ~= "cvars" then -- also set on demand
         dst[key] = NS.CleanupDB(value, dst[key])
       end
     end

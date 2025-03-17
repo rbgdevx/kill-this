@@ -92,28 +92,25 @@ NS.NPC_DATA = {
     glow = { 1, 0.69, 0, 1 },
     enabled = true,
   },
-  ["17252"] = { -- NEED GLOW
-    name = "Grimoire: Felguard",
-    spellId = 30146,
-    cVar = "nameplateShow(Friendly/Enemy)Guardians",
-    enabled = true,
-  },
-  ["225493"] = { -- NEED GLOW
+  ["225493"] = {
     name = "Doomguard",
     spellId = 453568,
     cVar = "nameplateShow(Friendly/Enemy)Guardians",
+    glow = { 1, 0.47, 0.21, 1 },
     enabled = true,
   },
-  ["103673"] = { -- NEED GLOW
+  ["103673"] = {
     name = "Darkglare",
     spellId = 205180,
     cVar = "nameplateShow(Friendly/Enemy)Guardians",
+    glow = { 0.67, 0.24, 1, 1 },
     enabled = true,
   },
-  ["27829"] = { -- NEED GLOW
+  ["27829"] = {
     name = "Gargoyle",
     spellId = 317250,
     cVar = "nameplateShow(Friendly/Enemy)Guardians",
+    glow = { 0.49, 0.46, 0.60, 1 },
     enabled = true,
   },
   ["105451"] = {
@@ -128,7 +125,7 @@ NS.NPC_DATA = {
     spellId = 204336,
     cVar = "nameplateShow(Friendly/Enemy)Totems",
     glow = { 1, 0, 1, 1 },
-    enabled = true,
+    enabled = false,
   },
   ["97369"] = {
     name = "Liquid Magma Totem",
@@ -142,14 +139,14 @@ NS.NPC_DATA = {
     spellId = 98008,
     cVar = "nameplateShow(Friendly/Enemy)Totems",
     glow = { 0, 1, 0.78, 1 },
-    enabled = true,
+    enabled = false,
   },
   ["5913"] = {
     name = "Tremor Totem",
     spellId = 8143,
     cVar = "nameplateShow(Friendly/Enemy)Totems",
     glow = { 0.49, 0.9, 0.08, 1 },
-    enabled = true,
+    enabled = false,
   },
   ["179867"] = {
     name = "Static Field Totem",
@@ -177,21 +174,21 @@ NS.NPC_DATA = {
     spellId = 207399,
     cVar = "nameplateShow(Friendly/Enemy)Totems",
     glow = { 0, 1, 0.78, 1 },
-    enabled = true,
+    enabled = false,
   },
   ["59764"] = {
     name = "Healing Tide Totem",
     spellId = 108280,
     cVar = "nameplateShow(Friendly/Enemy)Totems",
     glow = { 0, 1, 0.39, 1 },
-    enabled = true,
+    enabled = false,
   },
   ["59712"] = {
     name = "Stone Bulwark Totem",
     spellId = 108270,
     cVar = "nameplateShow(Friendly/Enemy)Totems",
     glow = { 0.98, 0.75, 0.17, 1 },
-    enabled = true,
+    enabled = false,
   },
 }
 
