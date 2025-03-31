@@ -1,5 +1,9 @@
 # KILL THIS
 
+## [v1.0.6](https://github.com/rbgdevx/kill-this/releases/tag/v1.0.6) (2025-03-31)
+
+- Adding support for Tidyplates nameplates
+
 ## [v1.0.5](https://github.com/rbgdevx/kill-this/releases/tag/v1.0.5) (2025-03-17)
 
 - Updating default settings

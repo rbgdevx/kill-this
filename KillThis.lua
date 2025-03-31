@@ -49,6 +49,8 @@ local function GetAnchorFrame(nameplate)
     return KuiNameplatesPlayerAnchor
   elseif ElvUIPlayerNamePlateAnchor then
     return ElvUIPlayerNamePlateAnchor
+  elseif TidyPlates and nameplate.extended then
+    return nameplate.extended.visual.healthbar
   else
     return nameplate.UnitFrame.HealthBarsContainer
   end
