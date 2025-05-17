@@ -40,7 +40,7 @@ local AceConfig = {
         ignoreNameplateAlpha = {
           name = "Ignore nameplate alpha",
           type = "toggle",
-          width = "full",
+          width = 1.1,
           order = 2,
           set = function(_, val)
             NS.db.general.ignoreNameplateAlpha = val
@@ -53,7 +53,7 @@ local AceConfig = {
         ignoreNameplateScale = {
           name = "Ignore nameplate scale",
           type = "toggle",
-          width = "full",
+          width = 1.0,
           order = 3,
           set = function(_, val)
             NS.db.general.ignoreNameplateScale = val
@@ -63,11 +63,17 @@ local AceConfig = {
             return NS.db.general.ignoreNameplateScale
           end,
         },
+        spacer1 = {
+          name = "",
+          type = "description",
+          order = 4,
+          width = "full",
+        },
         showFriendly = {
           name = "Show Banner on Friendly Units",
           type = "toggle",
           width = 1.3,
-          order = 4,
+          order = 5,
           set = function(_, val)
             NS.db.general.showFriendly = val
             NS.OnDbChanged()
@@ -80,7 +86,7 @@ local AceConfig = {
           name = "Show Banner on Enemy Units",
           type = "toggle",
           width = 1.3,
-          order = 5,
+          order = 6,
           set = function(_, val)
             NS.db.general.showEnemy = val
             NS.OnDbChanged()
@@ -89,10 +95,10 @@ local AceConfig = {
             return NS.db.general.showEnemy
           end,
         },
-        spacer1 = {
+        spacer2 = {
           name = "",
           type = "description",
-          order = 6,
+          order = 7,
           width = "full",
         },
         offsetX = {
@@ -100,7 +106,7 @@ local AceConfig = {
           desc = "Offset left/right from the anchor point",
           type = "range",
           width = 1.25,
-          order = 7,
+          order = 8,
           isPercent = false,
           min = -250,
           max = 250,
@@ -119,7 +125,7 @@ local AceConfig = {
           desc = "Offset top/bottom from the anchor point",
           type = "range",
           width = 1.25,
-          order = 8,
+          order = 9,
           isPercent = false,
           min = -250,
           max = 250,
@@ -133,17 +139,17 @@ local AceConfig = {
             return NS.db.general.offsetY
           end,
         },
-        spacer2 = {
+        spacer3 = {
           name = "",
           type = "description",
-          order = 9,
+          order = 10,
           width = "full",
         },
         fontSize = {
           type = "range",
           name = "Font Size",
           width = 2.0,
-          order = 10,
+          order = 11,
           min = 2,
           max = 64,
           step = 1,
@@ -155,17 +161,17 @@ local AceConfig = {
             return NS.db.general.fontSize
           end,
         },
-        spacer3 = {
+        spacer4 = {
           name = "",
           type = "description",
-          order = 11,
+          order = 12,
           width = "full",
         },
         fontFamily = {
           type = "select",
           name = "Font Family",
           width = 2.0,
-          order = 12,
+          order = 13,
           dialogControl = "LSM30_Font",
           values = SharedMedia:HashTable("font"),
           set = function(_, val)
@@ -176,17 +182,17 @@ local AceConfig = {
             return NS.db.general.fontFamily
           end,
         },
-        spacer4 = {
+        spacer5 = {
           name = "",
           type = "description",
-          order = 13,
+          order = 14,
           width = "full",
         },
         fontColor = {
           type = "color",
           name = "Font Color",
           width = 0.75,
-          order = 14,
+          order = 15,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.fontColor.r = val1
@@ -206,7 +212,7 @@ local AceConfig = {
           type = "color",
           name = "Background Color",
           width = 1.0,
-          order = 15,
+          order = 16,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.backgroundColor.r = val1
@@ -226,7 +232,7 @@ local AceConfig = {
           type = "color",
           name = "Border Color",
           width = 1.0,
-          order = 16,
+          order = 17,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.borderColor.r = val1
@@ -242,17 +248,17 @@ local AceConfig = {
               NS.db.general.borderColor.a
           end,
         },
-        spacer5 = {
+        spacer6 = {
           name = "",
           type = "description",
-          order = 17,
+          order = 18,
           width = "full",
         },
         labelEnabled = {
           name = "Label:",
           type = "toggle",
           width = 0.4,
-          order = 18,
+          order = 19,
           set = function(_, val)
             NS.db.general.labelEnabled = val
             NS.OnDbChanged()
@@ -266,7 +272,7 @@ local AceConfig = {
           desc = "",
           type = "input",
           width = 0.75,
-          order = 19,
+          order = 20,
           disabled = function()
             return not NS.db.general.labelEnabled
           end,
@@ -278,17 +284,17 @@ local AceConfig = {
             return NS.db.general.label
           end,
         },
-        spacer6 = {
+        spacer7 = {
           name = "",
           type = "description",
-          order = 20,
+          order = 21,
           width = 0.1,
         },
         includeUnitName = {
-          name = "Include Units Name (ex. 'Kill Psyfiend')",
+          name = "Include Units Name (i.e. 'Kill Psyfiend')",
           type = "toggle",
           width = 1.75,
-          order = 21,
+          order = 22,
           set = function(_, val)
             NS.db.general.includeUnitName = val
             NS.OnDbChanged()
@@ -297,17 +303,17 @@ local AceConfig = {
             return NS.db.general.includeUnitName
           end,
         },
-        spacer7 = {
+        spacer8 = {
           name = "",
           type = "description",
-          order = 22,
+          order = 23,
           width = "full",
         },
         uppercase = {
           name = "Uppercase",
           type = "toggle",
           width = 0.75,
-          order = 23,
+          order = 24,
           set = function(_, val)
             NS.db.general.uppercase = val
             NS.OnDbChanged()
@@ -320,7 +326,7 @@ local AceConfig = {
           name = "Lowercase",
           type = "toggle",
           width = 0.75,
-          order = 24,
+          order = 25,
           set = function(_, val)
             NS.db.general.lowercase = val
             NS.OnDbChanged()
@@ -333,7 +339,7 @@ local AceConfig = {
           name = "Blizzard CVar Settings",
           type = "group",
           inline = true,
-          order = 25,
+          order = 26,
           args = {
             varDesc = {
               name = "The following settings are required for the addon to work properly.",

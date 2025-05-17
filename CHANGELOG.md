@@ -1,5 +1,11 @@
 # KILL THIS
 
+## [v1.0.7](https://github.com/rbgdevx/kill-this/releases/tag/v1.0.7) (2025-05-17)
+
+- Updating setting layout a tiny bit
+- Assigning addon to my own category for organization
+- Update toc
+
 ## [v1.0.6](https://github.com/rbgdevx/kill-this/releases/tag/v1.0.6) (2025-03-31)
 
 - Adding support for Tidyplates nameplates
