@@ -1,5 +1,11 @@
 # KILL THIS
 
+## [v1.0.8](https://github.com/rbgdevx/kill-this/releases/tag/v1.0.8) (2025-08-26)
+
+- Fixing nameplate anchors for third party nameplate addons
+- New nameplate anchor setting
+- Update toc
+
 ## [v1.0.7](https://github.com/rbgdevx/kill-this/releases/tag/v1.0.7) (2025-05-17)
 
 - Updating setting layout a tiny bit

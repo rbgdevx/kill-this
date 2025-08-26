@@ -285,6 +285,7 @@ local DefaultDatabase = {
     test = false,
     ignoreNameplateAlpha = true,
     ignoreNameplateScale = true,
+    attachToHealthBar = false,
     showFriendly = false,
     showEnemy = true,
     offsetX = 0,

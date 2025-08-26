@@ -101,12 +101,31 @@ local AceConfig = {
           order = 7,
           width = "full",
         },
+        attachToHealthBar = {
+          name = "Attach directly to the healthbar",
+          type = "toggle",
+          order = 8,
+          width = 1.5,
+          get = function(_)
+            return NS.db.general.attachToHealthBar
+          end,
+          set = function(_, val)
+            NS.db.general.attachToHealthBar = val
+            NS.OnDbChanged()
+          end,
+        },
+        spacer3 = {
+          name = "",
+          type = "description",
+          order = 9,
+          width = "full",
+        },
         offsetX = {
           name = "Offset X",
           desc = "Offset left/right from the anchor point",
           type = "range",
           width = 1.25,
-          order = 8,
+          order = 10,
           isPercent = false,
           min = -250,
           max = 250,
@@ -125,7 +144,7 @@ local AceConfig = {
           desc = "Offset top/bottom from the anchor point",
           type = "range",
           width = 1.25,
-          order = 9,
+          order = 11,
           isPercent = false,
           min = -250,
           max = 250,
@@ -139,17 +158,17 @@ local AceConfig = {
             return NS.db.general.offsetY
           end,
         },
-        spacer3 = {
+        spacer4 = {
           name = "",
           type = "description",
-          order = 10,
+          order = 12,
           width = "full",
         },
         fontSize = {
           type = "range",
           name = "Font Size",
           width = 2.0,
-          order = 11,
+          order = 13,
           min = 2,
           max = 64,
           step = 1,
@@ -161,17 +180,17 @@ local AceConfig = {
             return NS.db.general.fontSize
           end,
         },
-        spacer4 = {
+        spacer5 = {
           name = "",
           type = "description",
-          order = 12,
+          order = 14,
           width = "full",
         },
         fontFamily = {
           type = "select",
           name = "Font Family",
           width = 2.0,
-          order = 13,
+          order = 15,
           dialogControl = "LSM30_Font",
           values = SharedMedia:HashTable("font"),
           set = function(_, val)
@@ -182,17 +201,17 @@ local AceConfig = {
             return NS.db.general.fontFamily
           end,
         },
-        spacer5 = {
+        spacer6 = {
           name = "",
           type = "description",
-          order = 14,
+          order = 16,
           width = "full",
         },
         fontColor = {
           type = "color",
           name = "Font Color",
           width = 0.75,
-          order = 15,
+          order = 17,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.fontColor.r = val1
@@ -212,7 +231,7 @@ local AceConfig = {
           type = "color",
           name = "Background Color",
           width = 1.0,
-          order = 16,
+          order = 18,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.backgroundColor.r = val1
@@ -232,7 +251,7 @@ local AceConfig = {
           type = "color",
           name = "Border Color",
           width = 1.0,
-          order = 17,
+          order = 19,
           hasAlpha = true,
           set = function(_, val1, val2, val3, val4)
             NS.db.general.borderColor.r = val1
@@ -248,17 +267,17 @@ local AceConfig = {
               NS.db.general.borderColor.a
           end,
         },
-        spacer6 = {
+        spacer7 = {
           name = "",
           type = "description",
-          order = 18,
+          order = 20,
           width = "full",
         },
         labelEnabled = {
           name = "Label:",
           type = "toggle",
           width = 0.4,
-          order = 19,
+          order = 21,
           set = function(_, val)
             NS.db.general.labelEnabled = val
             NS.OnDbChanged()
@@ -272,7 +291,7 @@ local AceConfig = {
           desc = "",
           type = "input",
           width = 0.75,
-          order = 20,
+          order = 22,
           disabled = function()
             return not NS.db.general.labelEnabled
           end,
@@ -284,17 +303,17 @@ local AceConfig = {
             return NS.db.general.label
           end,
         },
-        spacer7 = {
+        spacer8 = {
           name = "",
           type = "description",
-          order = 21,
+          order = 23,
           width = 0.1,
         },
         includeUnitName = {
           name = "Include Units Name (i.e. 'Kill Psyfiend')",
           type = "toggle",
           width = 1.75,
-          order = 22,
+          order = 24,
           set = function(_, val)
             NS.db.general.includeUnitName = val
             NS.OnDbChanged()
@@ -303,17 +322,17 @@ local AceConfig = {
             return NS.db.general.includeUnitName
           end,
         },
-        spacer8 = {
+        spacer9 = {
           name = "",
           type = "description",
-          order = 23,
+          order = 25,
           width = "full",
         },
         uppercase = {
           name = "Uppercase",
           type = "toggle",
           width = 0.75,
-          order = 24,
+          order = 26,
           set = function(_, val)
             NS.db.general.uppercase = val
             NS.OnDbChanged()
@@ -326,7 +345,7 @@ local AceConfig = {
           name = "Lowercase",
           type = "toggle",
           width = 0.75,
-          order = 25,
+          order = 27,
           set = function(_, val)
             NS.db.general.lowercase = val
             NS.OnDbChanged()
@@ -339,7 +358,7 @@ local AceConfig = {
           name = "Blizzard CVar Settings",
           type = "group",
           inline = true,
-          order = 26,
+          order = 28,
           args = {
             varDesc = {
               name = "The following settings are required for the addon to work properly.",
