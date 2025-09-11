@@ -1,6 +1,6 @@
 ## Interface: 110200
 ## Title: KILL THIS
-## Version: 1.0.9
+## Version: 1.0.10
 ## Author: RBGDEV
 ## Notes: Shows a banner above nameplates you should kill
 ## SavedVariables: KillThisDB
