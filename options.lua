@@ -63,12 +63,7 @@ local AceConfig = {
             return NS.db.general.ignoreNameplateScale
           end,
         },
-        spacer1 = {
-          name = "",
-          type = "description",
-          order = 4,
-          width = "full",
-        },
+        spacer1 = { name = "", type = "description", order = 4, width = "full" },
         showFriendly = {
           name = "Show Banner on Friendly Units",
           type = "toggle",
@@ -95,12 +90,7 @@ local AceConfig = {
             return NS.db.general.showEnemy
           end,
         },
-        spacer2 = {
-          name = "",
-          type = "description",
-          order = 7,
-          width = "full",
-        },
+        spacer2 = { name = "", type = "description", order = 7, width = "full" },
         attachToHealthBar = {
           name = "Attach directly to the healthbar",
           type = "toggle",
@@ -114,12 +104,7 @@ local AceConfig = {
             NS.OnDbChanged()
           end,
         },
-        spacer3 = {
-          name = "",
-          type = "description",
-          order = 9,
-          width = "full",
-        },
+        spacer3 = { name = "", type = "description", order = 9, width = "full" },
         offsetX = {
           name = "Offset X",
           desc = "Offset left/right from the anchor point",
@@ -158,12 +143,7 @@ local AceConfig = {
             return NS.db.general.offsetY
           end,
         },
-        spacer4 = {
-          name = "",
-          type = "description",
-          order = 12,
-          width = "full",
-        },
+        spacer4 = { name = "", type = "description", order = 12, width = "full" },
         fontSize = {
           type = "range",
           name = "Font Size",
@@ -180,12 +160,7 @@ local AceConfig = {
             return NS.db.general.fontSize
           end,
         },
-        spacer5 = {
-          name = "",
-          type = "description",
-          order = 14,
-          width = "full",
-        },
+        spacer5 = { name = "", type = "description", order = 14, width = "full" },
         fontFamily = {
           type = "select",
           name = "Font Family",
@@ -201,12 +176,7 @@ local AceConfig = {
             return NS.db.general.fontFamily
           end,
         },
-        spacer6 = {
-          name = "",
-          type = "description",
-          order = 16,
-          width = "full",
-        },
+        spacer6 = { name = "", type = "description", order = 16, width = "full" },
         fontColor = {
           type = "color",
           name = "Font Color",
@@ -267,12 +237,7 @@ local AceConfig = {
               NS.db.general.borderColor.a
           end,
         },
-        spacer7 = {
-          name = "",
-          type = "description",
-          order = 20,
-          width = "full",
-        },
+        spacer7 = { name = "", type = "description", order = 20, width = "full" },
         labelEnabled = {
           name = "Label:",
           type = "toggle",
@@ -303,12 +268,7 @@ local AceConfig = {
             return NS.db.general.label
           end,
         },
-        spacer8 = {
-          name = "",
-          type = "description",
-          order = 23,
-          width = 0.1,
-        },
+        spacer8 = { name = "", type = "description", order = 23, width = 0.1 },
         includeUnitName = {
           name = "Include Units Name (i.e. 'Kill Psyfiend')",
           type = "toggle",
@@ -322,12 +282,7 @@ local AceConfig = {
             return NS.db.general.includeUnitName
           end,
         },
-        spacer9 = {
-          name = "",
-          type = "description",
-          order = 25,
-          width = "full",
-        },
+        spacer9 = { name = "", type = "description", order = 25, width = "full" },
         uppercase = {
           name = "Uppercase",
           type = "toggle",
@@ -367,12 +322,7 @@ local AceConfig = {
               fontSize = "small",
               order = 1,
             },
-            spacer1 = {
-              name = "",
-              type = "description",
-              order = 2,
-              width = "full",
-            },
+            spacer1 = { name = "", type = "description", order = 2, width = "full" },
             showAlways = {
               name = "Show nameplates Always (CVar: 'nameplateShowAll')",
               desc = "In order for banners to show up on nameplates, this setting must be enabled.",
@@ -525,12 +475,7 @@ local AceConfig = {
             return "https://discord.gg/A3g5qZqtdc"
           end,
         },
-        spacer1 = {
-          name = "",
-          type = "description",
-          order = 4,
-          width = "full",
-        },
+        spacer1 = { name = "", type = "description", order = 4, width = "full" },
       },
     },
   },
