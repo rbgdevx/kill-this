@@ -510,12 +510,7 @@ NS.MakeNPCOption = function(npcId, npcInfo, index)
         width = "full",
         order = 1,
       },
-      spacer1 = {
-        name = "",
-        type = "description",
-        order = 2,
-        width = "full",
-      },
+      spacer1 = { name = "", type = "description", order = 2, width = "full" },
       enabled = {
         name = "Enable",
         type = "toggle",
