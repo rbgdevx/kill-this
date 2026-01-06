@@ -1,5 +1,11 @@
 # KILL THIS
 
+## [v1.1.0](https://github.com/rbgdevx/kill-this/releases/tag/v1.1.0) (2026-01-06)
+
+- Updating toc
+- Updating settings
+- General cleanup
+
 ## [v1.0.10](https://github.com/rbgdevx/kill-this/releases/tag/v1.0.10) (2025-09-10)
 
 - Changing core anchor
