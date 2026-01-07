@@ -1,8 +1,9 @@
 ## Interface: 110207
 ## Title: KILL THIS
-## Version: 1.1.0
+## Version: 1.1.1
 ## Author: RBGDEV
 ## Notes: Shows a banner above nameplates you should kill
+## IconTexture: Interface/AddOns/KillThis/logo.tga
 ## SavedVariables: KillThisDB
 ## Category: RBGDEV
 ## X-Category: Battlegrounds/PvP

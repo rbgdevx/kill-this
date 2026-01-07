@@ -1,5 +1,9 @@
 # KILL THIS
 
+## [v1.1.1](https://github.com/rbgdevx/kill-this/releases/tag/v1.1.1) (2026-01-07)
+
+- Adding logo
+
 ## [v1.1.0](https://github.com/rbgdevx/kill-this/releases/tag/v1.1.0) (2026-01-06)
 
 - Updating toc
